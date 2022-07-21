@@ -1,16 +1,17 @@
-import A from "./A";
+import Link from "./Link";
 import Head from "next/head";
 
-const MainContainer = ({children, keywords}) => {
+const MainLayout = ({children, keywords}) => {
     return (
         <>
             <Head>
-                <meta keywords={"grog, next js" + keywords}></meta>
+                <meta keywords={"grog,nextjs," + keywords} />
+                <meta name='description' content={'test project on next js'}/>
                 <title>Главная страница</title>
             </Head>
             <nav className={'navbar'}>
-                <A href={'/'} text={'Главная'}/>
-                <A href={'/users'} text={'Пользователи'}/>
+                <Link href={'/'}>Главная</Link>
+                <Link href={'/users'}>Пользователи</Link>
             </nav>
             <div>{children}</div>
             <style jsx>
@@ -26,4 +27,4 @@ const MainContainer = ({children, keywords}) => {
     );
 };
 
-export default MainContainer;
+export default MainLayout;

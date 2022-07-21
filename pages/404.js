@@ -1,9 +1,9 @@
-import MainContainer from "../components/MainContainer";
+import MainLayout from "../components/MainLayout";
 
 export default function Error(){
     return(
-        <MainContainer>
+        <MainLayout>
             <h1>404</h1>
-        </MainContainer>
+        </MainLayout>
     )
 }

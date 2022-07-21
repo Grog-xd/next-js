@@ -1,17 +1,11 @@
-import {useState} from "react";
-import Link from "next/link";
-import MainContainer from "../components/MainContainer";
+ import Link from "next/link";
+import MainLayout from "../../components/MainLayout";
 
 
-const Users = ({users}) => {
-    // const [users, setUsers]= useState([
-    //     {id:1, name:'dima'},
-    //     {id:2, name:'pasha'},
-    //
-    // ])
+const Index = ({users}) => {
 
     return (
-        <MainContainer keywords={"users"}>
+        <MainLayout keywords={"users"}>
             <h1>Список пользователей</h1>
             <ul>
                 {users.map(user=>
@@ -22,13 +16,12 @@ const Users = ({users}) => {
                     </li>
                 )}
             </ul>
-        </MainContainer>
+        </MainLayout>
     );
 };
 
-export default Users;
+export default Index;
 
-// запрос с сервера для нескольких элементов
 
 export async function getStaticProps(context){
     const response = await fetch('https://jsonplaceholder.typicode.com/users')

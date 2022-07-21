@@ -1,7 +1,5 @@
-import Link from "next/link";
-import A from "../components/A";
-import Head from "next/head";
-import MainContainer from "../components/MainContainer";
+import MainLayout from "../components/MainLayout";
+import Image from "next/image";
 
 
 const Index = () => {
@@ -10,10 +8,10 @@ const Index = () => {
 
     return (
         <>
-            <MainContainer keywords={"main page"}>
+            <MainLayout keywords={"main page"}>
                 <h1>Главная страница</h1>
-
-            </MainContainer>
+                <Image src='/logo.png' width={300} height={150} placeholder="blur" blurDataURL='/logo.png'/>
+            </MainLayout>
         </>
 
     );
